@@ -159,7 +159,7 @@ int main(int argc, char **argv)
 
     for (rosbag::MessageInstance const m : rosbag::View(bag))
     {
-        std::cout << "\r[bag2image] -Start:---->>  -image_count:" << count_cpr <<  " -image_count:"<< frames_cpr;
+        std::cout << "\r[bag2image] -Start:---->>  -image_account:" << count_cpr <<  " -image_compressed:"<< frames_cpr;
         
         sensor_msgs::CompressedImageConstPtr c_img_ptr = m.instantiate<sensor_msgs::CompressedImage>();
         if (c_img_ptr != nullptr)
