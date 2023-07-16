@@ -168,7 +168,7 @@ int main(int argc, char **argv)
             {
                 cv::Mat img = cv_bridge::toCvCopy(c_img_ptr, sensor_msgs::image_encodings::BGR8)->image;
                 std::stringstream ss;
-                ss << imgPath << "cpr_" << ++frames_cpr << ".png";
+                ss << imgPath << "CPR_" << ++frames_cpr << ".jpg";
                 cv::imwrite(ss.str(), img);
             }
         }
