@@ -164,11 +164,11 @@ int main(int argc, char **argv)
         sensor_msgs::CompressedImageConstPtr c_img_ptr = m.instantiate<sensor_msgs::CompressedImage>();
         if (c_img_ptr != nullptr)
         {
-            if ((++count_cpr) % interval == 0)
+            if ((count_cpr++) % interval == 0)
             {
                 cv::Mat img = cv_bridge::toCvCopy(c_img_ptr, sensor_msgs::image_encodings::BGR8)->image;
                 std::stringstream ss;
-                ss << imgPath << "CPR_" << ++frames_cpr << ".jpg";
+                ss << imgPath << "CPR_" << std::setw(4) << std::setfill('0') << ++frames_cpr << ".jpg";
                 cv::imwrite(ss.str(), img);
             }
         }
