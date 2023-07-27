@@ -167,6 +167,7 @@ int main(int argc, char **argv)
             if ((count_cpr++) % interval == 0)
             {
                 cv::Mat img = cv_bridge::toCvCopy(c_img_ptr, sensor_msgs::image_encodings::BGR8)->image;
+                // cv::flip(img, img, 1);  // Flip the image left and right
                 std::stringstream ss;
                 ss << imgPath << "CPR_" << std::setw(4) << std::setfill('0') << frames_cpr << ".jpg";
                 cv::imwrite(ss.str(), img);
