@@ -125,7 +125,7 @@ int main(int argc, char **argv)
 
     ros::init(argc, argv, "bag2video_hsv");
 
-    std::string outPath = filePath + "/output_videos";
+    std::string outPath = filePath + "/output_videos/hsv_videos";
     if (!check_targetDir(outPath))
     {
         ROS_ERROR("check output_video DIR error, outPath: %s", outPath.c_str());
